@@ -1,0 +1,1 @@
+export { ProductShelf } from './ProductShelf'

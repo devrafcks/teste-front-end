@@ -1,0 +1,58 @@
+.banner {
+    position: relative;
+    width: 100%;
+    min-height: 340px;
+    background-image: url('/banner-bf.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    @include respond-to(sm) {
+        min-height: 240px;
+    }
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right,
+            rgba(0, 0, 0, 0.65) 0%,
+            rgba(0, 0, 0, 0.2) 60%,
+            transparent 100%);
+}
+
+.content {
+    @include container;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-md;
+    padding-top: $spacing-2xl;
+    padding-bottom: $spacing-2xl;
+
+    @include respond-to(sm) {
+        padding-top: $spacing-xl;
+        padding-bottom: $spacing-xl;
+    }
+}
+
+.title {
+    font-size: clamp(24px, 4vw, 48px);
+    font-weight: 700;
+    color: $color-white;
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: clamp(14px, 2vw, 22px);
+    color: $color-white;
+
+    strong {
+        color: $color-accent;
+        font-weight: 700;
+    }
+}

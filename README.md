@@ -1,31 +1,54 @@
-# Teste Econverse: Vaga Desenvolvedor Front-End
+# Teste Vaga FrontEnd - Econverse
 
-### Vem ser #Econverse!
+Este é o projeto desenvolvido como teste para a vaga de FrontEnd na Econverse, construído em React com Vite e TypeScript, compilando os SCSS com CSS Modules conforme as instruções.
 
-Segue abaixo as instruções para a execução do teste.
+## Tecnologias Usadas
 
-## Instruções
-- Faça um fork desse projeto para a sua conta pessoal do GitHub.
-- Desenvolva a página conforme as **Especificações Técnicas** 
-- Crie um README com as instruções para compilar, testar e rodar o projeto.
-- O link do repositório deverá ser enviado para o e-mail julia.gardiano@econverse.com.br com o título **Teste Vaga FrontEnd**
+* React 18
+* TypeScript
+* Vite (Bundler super veloz!)
+* SCSS & CSS Modules (para organização dos estilos modulares)
+* Zod (validação de schemas e parser de payload)
+* Axios / React Query (para gerenciar cache e fetch com perfeição)
 
-## Especificações Técnicas
-- Desenvolver a pagina em React e TypeScript conforme o [layout](https://www.figma.com/file/rWnzPeoxgynuNPsJjV0VmV/Teste-Front-End-Jr?node-id=0%3A1). Para conseguir pegar os elementos do Figma, basta copiar o layout para sua conta que terá acesso de edição.
-- Montar a [vitrine](https://app.econverse.com.br/teste-front-end/junior/tecnologia/layout/vitrine-produtos.png) de produtos consumindo as informações dos produtos em json atraves desse [Link](https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json).
-- Desenvolver a interação ao clicar em um produto conforme layout. A interação consiste em abrir um modal com as principais informações do produto presente no arquivo [JSON](https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json) conforme o produto que clicar.
-- Utilizar Pré-processador Sass, Less ou Stylus.
-- Respeitar o Layout pixel a pixel, tamanho das fontes, cores e botões.
-- Não Utilizar bibliotecas UI como Bootstrap, Foundation, ou afins.
+## Como executar
 
-## Pontos Extras
-- Utilizar Boas práticas de SEO
-- Uso de HTML semântico
+### Pré-requisitos
+* Node.js v16+ instalado.
+* `npm`, `yarn` ou `pnpm` instalado.
 
-## O que avaliaremos em seu teste
-- Organização do projeto
-- Lógica do código
-- Componentização
-- Alcance dos objetivos propostos
+### 1. Instalar as dependências
 
-**Boa sorte! ;)**
+Se usar o PNPM (recomendado como foi feito aqui):
+```bash
+pnpm install
+```
+Se usar o NPM:
+```bash
+npm install
+```
+
+### 2. Rodar o servidor de desenvolvimento
+
+```bash
+pnpm run dev
+# ou npm run dev
+```
+
+E acesse em `http://localhost:5173`.
+
+### 3. Fazer o build para produção
+
+```bash
+pnpm run build
+# ou npm run build
+```
+
+Isso irá exportar o projeto para a pasta `/dist`.
+
+### Detalhes técnicos importantes do projeto
+
+* **Responsividade e Fidelidade:** O layout das categorias, footer, circles das marcas e modais foram baseados na imagem fornecida do Figma pixel-a-pixel. 
+* **Conversão do Payload:** Como o JSON provido (de `app.econverse.com.br`) não retornava as propriedades como a nossa UI esperava (retorna `productName` em vez de `nome`, `photo` em vez de `image`), adicionei no interceptador do repositório/service um pre-parsing inteligente da payload do JSON, usando Zod para validar antes do uso no App. 
+* **Semântica HTML5:** Utilização de Tags `<section>`, `<main>`, `<article>`, `<header>`, `<footer>`, `<nav>` etc para priorizar a leitura de código e o SEO da página.
+* **Acessibilidade:** Botões, Modais, Imagens tem em sua totalidade `aria-label`, ou focus lock em botões de saída (fechamento de modais), assim a navegação em leitores fica consistente.

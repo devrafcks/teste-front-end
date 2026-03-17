@@ -1,0 +1,83 @@
+.partners {
+    padding: $spacing-lg 0;
+}
+
+.inner {
+    @include container;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-md;
+
+    @include respond-to(md) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card {
+    position: relative;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    min-height: 180px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.cardImage {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.7) 0%,
+            rgba(0, 0, 0, 0.2) 100%);
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    padding: $spacing-lg;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+}
+
+.title {
+    font-size: 22px;
+    font-weight: 700;
+    color: $color-white;
+}
+
+.description {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8);
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.btn {
+    background: $color-accent;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    color: $color-text;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 8px 20px;
+    border-radius: $radius-sm;
+    letter-spacing: 0.04em;
+    align-self: flex-start;
+    transition: background $transition-fast;
+
+    &:hover {
+        background: $color-accent-dark;
+    }
+}

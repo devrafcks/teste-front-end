@@ -1,0 +1,220 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-lg;
+    animation: fadeIn 0.2s ease;
+
+    @include respond-to(sm) {
+        padding: $spacing-sm;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.modal {
+    background: $color-white;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-modal;
+    width: 100%;
+    max-width: 720px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    position: relative;
+    overflow: hidden;
+    animation: slideUp 0.25s ease;
+    max-height: 90vh;
+    overflow-y: auto;
+
+    @include respond-to(md) {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+
+    @include respond-to(sm) {
+        max-width: 100%;
+        border-radius: $radius-md;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.closeBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: $spacing-md;
+    right: $spacing-md;
+    width: 32px;
+    height: 32px;
+    border-radius: $radius-full;
+    color: $color-text-light;
+    transition: background $transition-fast, color $transition-fast;
+    z-index: 1;
+    font: inherit;
+
+    &:hover {
+        background: $color-bg;
+        color: $color-text;
+    }
+
+    &:focus-visible {
+        outline: 2px solid $color-primary;
+    }
+}
+
+.imageWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-2xl;
+    background: $color-bg;
+
+    @include respond-to(md) {
+        padding: $spacing-xl;
+    }
+
+    @include respond-to(sm) {
+        padding: $spacing-lg;
+    }
+}
+
+.image {
+    width: 100%;
+    max-width: 240px;
+    height: auto;
+    object-fit: contain;
+
+    @include respond-to(sm) {
+        max-width: 180px;
+    }
+}
+
+.info {
+    padding: $spacing-2xl $spacing-xl;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+
+    @include respond-to(md) {
+        padding: $spacing-lg;
+    }
+
+    @include respond-to(sm) {
+        padding: $spacing-md;
+    }
+}
+
+.name {
+    font-size: 15px;
+    font-weight: 700;
+    color: $color-text;
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.price {
+    font-size: 28px;
+    font-weight: 700;
+    color: $color-primary;
+
+    @include respond-to(sm) {
+        font-size: 22px;
+    }
+}
+
+.description {
+    font-size: 13px;
+    color: $color-text-light;
+    line-height: 1.6;
+}
+
+.detailLink {
+    font-size: 13px;
+    color: $color-link;
+    text-decoration: underline;
+    font-weight: 500;
+    transition: opacity $transition-fast;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    margin-top: auto;
+
+    @include respond-to(sm) {
+        flex-direction: column;
+        gap: $spacing-sm;
+    }
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.qtyBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 48px;
+    color: $color-text;
+    transition: background $transition-fast;
+
+    &:hover {
+        background: $color-bg;
+    }
+}
+
+.qtyValue {
+    width: 40px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    border-left: 1px solid $color-border;
+    border-right: 1px solid $color-border;
+    line-height: 48px;
+}

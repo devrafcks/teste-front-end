@@ -1,0 +1,109 @@
+.categories {
+    padding: $spacing-xl 0;
+}
+
+.inner {
+    @include container;
+}
+
+.list {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: $spacing-2xl;
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    padding-bottom: $spacing-sm;
+
+    @include respond-to(lg) {
+        gap: $spacing-xl;
+    }
+
+    @include respond-to(md) {
+        gap: $spacing-lg;
+        justify-content: flex-start;
+    }
+}
+
+.item {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-md;
+    color: $color-text;
+    font: inherit;
+    transition: opacity $transition-fast;
+    flex-shrink: 0;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.iconWrapper {
+    width: 128px;
+    height: 128px;
+    background: #F4F4F5;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.13);
+
+    svg {
+        width: 60px;
+        height: 60px;
+        color: #4E4E4E;
+    }
+
+    @include respond-to(md) {
+        width: 90px;
+        height: 90px;
+
+        svg {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    @include respond-to(sm) {
+        width: 72px;
+        height: 72px;
+
+        svg {
+            width: 32px;
+            height: 32px;
+        }
+    }
+}
+
+.active .label {
+    color: $color-primary;
+}
+
+.active .iconWrapper {
+    background: #FFFFFF;
+
+    svg {
+        color: $color-primary;
+    }
+}
+
+.label {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+
+    @include respond-to(md) {
+        font-size: 13px;
+    }
+}

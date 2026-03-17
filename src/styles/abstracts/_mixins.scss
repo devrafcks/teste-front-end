@@ -1,0 +1,78 @@
+@use "variables" as *;
+
+@mixin respond-to($bp) {
+  @if $bp ==sm {
+    @media (max-width: #{$bp-sm}) {
+      @content;
+    }
+  }
+
+  @else if $bp ==md {
+    @media (max-width: #{$bp-md}) {
+      @content;
+    }
+  }
+
+  @else if $bp ==lg {
+    @media (max-width: #{$bp-lg}) {
+      @content;
+    }
+  }
+
+  @else if $bp ==xl {
+    @media (max-width: #{$bp-xl}) {
+      @content;
+    }
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin container {
+  width: 100%;
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 $spacing-lg;
+}
+
+@mixin truncate($lines: 1) {
+  @if $lines ==1 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+@mixin button-reset {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+}
+
+@mixin card-hover {
+  transition: box-shadow $transition-base, transform $transition-base;
+
+  &:hover {
+    box-shadow: $shadow-hover;
+    transform: translateY(-2px);
+  }
+}

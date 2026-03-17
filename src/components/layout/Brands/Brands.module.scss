@@ -1,0 +1,73 @@
+.brands {
+    padding: $spacing-2xl 0;
+}
+
+.inner {
+    @include container;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xl;
+    align-items: center;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 700;
+    color: $color-primary;
+
+    @include respond-to(sm) {
+        font-size: 22px;
+    }
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+
+    @include respond-to(sm) {
+        gap: 16px;
+    }
+}
+
+.brandItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 211px;
+    height: 211px;
+    background: $color-white;
+    border-radius: $radius-full;
+    box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.13);
+    transition: transform $transition-fast, box-shadow $transition-fast;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.13);
+    }
+
+    img {
+        object-fit: contain;
+        width: 100px;
+    }
+
+    @include respond-to(md) {
+        width: 150px;
+        height: 150px;
+
+        img {
+            width: 70px;
+        }
+    }
+
+    @include respond-to(sm) {
+        width: 120px;
+        height: 120px;
+
+        img {
+            width: 60px;
+        }
+    }
+}
