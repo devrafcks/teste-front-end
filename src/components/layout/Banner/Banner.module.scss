@@ -1,16 +1,17 @@
 .banner {
     position: relative;
     width: 100%;
-    min-height: 340px;
+    min-height: 380px;
     background-image: url('/banner-bf.png');
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
     overflow: hidden;
+    border-radius: 4px;
 
     @include respond-to(sm) {
-        min-height: 240px;
+        min-height: 280px;
     }
 }
 

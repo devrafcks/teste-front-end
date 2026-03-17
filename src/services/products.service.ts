@@ -20,8 +20,8 @@ function normalizeProducts(data: unknown): Product[] {
   const results: Product[] = []
   raw.forEach((item: any, index: number) => {
     const price = item?.price ?? 0
-    const oldPrice = Math.round(price * 1.15)
-    const installmentCount = 3
+    const oldPrice = Math.round(price * 1.1) // Slightly smaller factor to get closer values
+    const installmentCount = 2
     const installmentValue = Math.round(price / installmentCount)
 
     const mapped = {

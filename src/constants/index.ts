@@ -1,5 +1,10 @@
-export const API_URL =
-  '/api/teste-front-end/junior/tecnologia/lista-produtos/produtos.json'
+const REAL_API = 'https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json'
+const PROXY_DEV = '/api/teste-front-end/junior/tecnologia/lista-produtos/produtos.json'
+
+// Em dev usa o proxy do Vite, em prod usa AllOrigins para evitar CORS
+export const API_URL = import.meta.env.DEV
+  ? PROXY_DEV
+  : `https://api.allorigins.win/raw?url=${encodeURIComponent(REAL_API)}`
 
 export const PRODUCT_TABS = [
   { id: 'celular', label: 'CELULAR' },

@@ -53,7 +53,7 @@ export function Newsletter() {
                             checked={accepted}
                             onChange={(e) => setAccepted(e.target.checked)}
                         />
-                        <span>Aceito os termos e condições</span>
+                        <span>Aceito os termos e política de privacidade</span>
                     </label>
                 </form>
             </div>

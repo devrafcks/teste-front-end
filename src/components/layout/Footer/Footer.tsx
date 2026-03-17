@@ -46,7 +46,10 @@ export function Footer() {
 
             <div className={styles.bottomBar}>
                 <div className={styles.bottomInner}>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>
+                        Copyright © 2019. Todos os direitos reservados. Todas as marcas e suas imagens são de propriedade de seus respectivos donos. <br />
+                        É vedada a reprodução, total ou parcial, de qualquer conteúdo sem expressa autorização.
+                    </p>
                 </div>
             </div>
         </footer>

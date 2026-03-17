@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/Button'
 import styles from './Partners.module.scss'
 
 const PARTNERS = [
@@ -20,7 +21,13 @@ export function Partners() {
                         <div className={styles.content}>
                             <h3 className={styles.title}>{partner.title}</h3>
                             <p className={styles.description}>{partner.description}</p>
-                            <button className={styles.btn}>CONFIRA</button>
+                            <Button
+                                variant="accent"
+                                size="md"
+                                onClick={() => { }}
+                            >
+                                CONFIRA
+                            </Button>
                         </div>
                     </article>
                 ))}
